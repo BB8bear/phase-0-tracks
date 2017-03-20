@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shirt Order Form</title>
+</head>
+<body>
+<p>Please fill out the order form below to get your shirt!</p>
+
+<form action="./success.html" method="post">
+<p><label>Fist Name: </label><br>
+    <input type="text" name="firstname">
+</p>
+<p><label>Last Name: </label><br>
+    <input type="text" name="lastname">
+</p>
+
+
+<p><label>Shirt Size: </label><select name="shirt size">
+    <option id="small" value="Small">Small</option>
+    <option id="medium" value="Medium">Medium</option>
+    <option id="large" value="Large">Large</option>
+    <option id="x-large" value="X-Large">X-Large</option>
+</select>
+</p>
+    
+<p><label>Shipping Address: </label><br>
+    <textarea name="address"></textarea></p>
+
+<p><label>Design: </label><br>
+    <label><input type=radio name=design value="stars">Stars</label>
+    <label><input type=radio name=design value="hearts">Hearts</label>
+    <label><input type=radio name=design value="clovers">Clovers</label>
+</p>
+
+<p><label>Color: </label><br>
+    <label><input type=checkbox name="color" value="red">Red</label>
+    <label><input type=checkbox name="color" value="green">Green</label>
+    <label><input type=checkbox name="color" value="blue">Blue</label>
+</p>
+
+<p><input name="submit" type="submit">
+    <input name="reset" type="reset">
+</p>
+    
+
+
+</form>
+
+
+</body>
+</html>
