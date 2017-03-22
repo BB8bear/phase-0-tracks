@@ -16,3 +16,10 @@
 /* {
     border: red 1px dashed;
 }*/
+#contact-info:hover {
+    background-color: gray;
+}
+
+ol > li:first-child {
+    background-color: lightblue;
+}
