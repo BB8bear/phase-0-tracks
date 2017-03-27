@@ -5,8 +5,9 @@ Once elevator is called
     - If doors open, check to make sure elevator is there
         + If elevator is present, enter elevator
         + If elevator is not present, call maintenance
-Once inside elevator
-    - Locate floor selection panel in elevator
+Once inside Elevator
+    - Turn around to face the door
+    - Locate floor selection panel in elevator:
         + Check to the left of elevator door
             * If panel is on the left
                 - move to the left to be in front of panel
@@ -14,22 +15,51 @@ Once inside elevator
                 - move to the right
                 - if panel is there
                     + stay in front of the panel
-    - Once floor selection panel has been located
-        + find button that corresponds to the floor you want to visit
-        + press the button that corresponds to the floor you want to visit
-    - Locate floor display
-        + look above floor selection panel
-            * If floor display is above floor selection panel
-                - watch current floor display
-            * If floor display is not above selection panel
-                - look above door for current floor display
-                    + If floor display is above door
-                        * watch current floor display
-            * If floor display is not above door
-                - Elevator sucks
-                - call maintenance
-    - Watch current floor display
-        + Once current floor display matches the floor button you selected
-            * wait for elevator doors to open
-                - exit elevator
-        
+
+Once floor selection panel has been located
+    - Locate the bottom left button in the panel
+        + until the number on the button corresponds with the floor you want:
+            * check the button
+                - check right: if it does not match, move right
+                    + repeat until end of row
+                        * when you run out of buttons in a row, move up one row
+                            - move on to check left section
+            *  check the button
+                -  check left: if it does not match, move left
+                    +  repeat until end of row
+                        *  when you run out of buttons in a row, move up one row
+                            -  repeat check right section
+
+Once you find the correct button
+    - Press the button that corresponds to the floor you want to visit
+    - If your elevator had a floor selection panel on the left, move right to be in front of elevator door
+    - If your elevator had a floor selection panel on the right, move left to be in front of the elevator door
+
+Locate floor display
+    - look above floor selection panel
+        + If floor display is above floor selection panel
+            * watch current floor display
+        + If floor display is not above selection panel
+            * look above door for current floor display
+                - If floor display is above door
+                    + watch current floor display
+        + If floor display is not above door
+            * Elevator sucks
+            * call maintenance
+
+Locate floor display
+    - look above floor selection panel
+        + If floor display is above floor selection panel
+            * watch current floor display
+        + If floor display is not above selection panel
+            * look above door for current floor display
+                - If floor display is above door
+                    + watch current floor display
+        + If floor display is not above door
+            * Elevator sucks
+            * call maintenance
+
+Watch current floor display
+    - Once current floor display matches the floor button you selected
+        + wait for elevator doors to open
+            * exit elevator
