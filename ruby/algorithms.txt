@@ -1,0 +1,102 @@
+How a Robot Should Use an Elevator:
+
+When facing an elevator
+    - If you want to go up, push the top button on the elevator call panel
+    - If you want to go down, push the bottom button on the elevator call panel
+Once elevator is called
+    - If doors open, check to make sure elevator is there
+        + If elevator is present, enter elevator
+        + If elevator is not present, call maintenance
+Once inside Elevator
+    - Turn around to face the door
+    - Locate floor selection panel in elevator:
+        + Check to the left of elevator door
+            * If panel is on the left
+                - move to the left to be in front of panel
+            * If panel is not on the left
+                - move to the right
+                - if panel is there
+                    + stay in front of the panel
+
+Once floor selection panel has been located
+    - Locate the bottom left button in the panel
+        + until the number on the button corresponds with the floor you want:
+            * check the button
+                - check right: if it does not match, move right
+                    + repeat until end of row
+                        * when you run out of buttons in a row, move up one row
+                            - move on to check left section
+            *  check the button
+                -  check left: if it does not match, move left
+                    +  repeat until end of row
+                        *  when you run out of buttons in a row, move up one row
+                            -  repeat check right section
+
+Once you find the correct button
+    - Press the button that corresponds to the floor you want to visit
+    - If your elevator had a floor selection panel on the left, move right to be in front of elevator door
+    - If your elevator had a floor selection panel on the right, move left to be in front of the elevator door
+
+Locate floor display
+    - look above floor selection panel
+        + If floor display is above floor selection panel
+            * watch current floor display
+        + If floor display is not above selection panel
+            * look above door for current floor display
+                - If floor display is above door
+                    + watch current floor display
+        + If floor display is not above door
+            * Elevator sucks
+            * call maintenance
+
+Locate floor display
+    - look above floor selection panel
+        + If floor display is above floor selection panel
+            * watch current floor display
+        + If floor display is not above selection panel
+            * look above door for current floor display
+                - If floor display is above door
+                    + watch current floor display
+        + If floor display is not above door
+            * Elevator sucks
+            * call maintenance
+
+Watch current floor display
+    - Once current floor display matches the floor button you selected
+        + wait for elevator doors to open
+            * exit elevator
+
+
+
+Release 1: Real Life Algorithm - Feeding the Cats
+
+Check floor for old dishes:
+    - If dirty cat food bowls are on floor
+        + Pick up leftmost bowl and place it in the bowl to the right
+            * Repeat until no more bowls are to the right
+                - Place bowls on livingroom divider
+
+Put down clean dishes:
+    - Pick up clean cat food bowls from livingroom divider with left hand
+        + Place one bowl along the livingroom divider wall at the leftmost edge
+            * Place the next bowl along the livingroom divider wall to the right of the previous bowl
+                - Repeat until no more bowls in left hand
+
+Get cat food can:
+    - Turn 180* to face cat food storage bin
+    - Lift lid of cat food storage bin
+    - Remove one can of cat food from storage bin, left hand
+    - Remove one spoon from storage bin, right hand
+    - Replace lid
+    - Turn 180* to face clean cat food bowls
+
+Put cat food in clean bowls:
+    - Put finger in ring-top of cat food can
+    - Pull cat food lid off
+        + Set cat food lid in dirty cat food bowls on livingroom divider wall
+    - Take spoon in right hand and scoop 1/3 of cat food onto spoon
+        + Place food on spoon into leftmost cat food bowl
+            * Move one cat food bowl to the right
+                - Repeat steps until no more bowls to the right
+    - Once cat food can is empty place in dirty cat food bowls on livingroom divider wall
+        + take dirty cat food dishes stack, including empty cat food can and lid to basement for cleaning and recycling
