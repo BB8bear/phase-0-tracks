@@ -1,0 +1,35 @@
+When facing an elevator
+    - If you want to go up, push the top button on the elevator call panel
+    - If you want to go down, push the bottom button on the elevator call panel
+Once elevator is called
+    - If doors open, check to make sure elevator is there
+        + If elevator is present, enter elevator
+        + If elevator is not present, call maintenance
+Once inside elevator
+    - Locate floor selection panel in elevator
+        + Check to the left of elevator door
+            * If panel is on the left
+                - move to the left to be in front of panel
+            * If panel is not on the left
+                - move to the right
+                - if panel is there
+                    + stay in front of the panel
+    - Once floor selection panel has been located
+        + find button that corresponds to the floor you want to visit
+        + press the button that corresponds to the floor you want to visit
+    - Locate floor display
+        + look above floor selection panel
+            * If floor display is above floor selection panel
+                - watch current floor display
+            * If floor display is not above selection panel
+                - look above door for current floor display
+                    + If floor display is above door
+                        * watch current floor display
+            * If floor display is not above door
+                - Elevator sucks
+                - call maintenance
+    - Watch current floor display
+        + Once current floor display matches the floor button you selected
+            * wait for elevator doors to open
+                - exit elevator
+        
