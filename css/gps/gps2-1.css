@@ -1,28 +1,51 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 header, footer {
-  background-color: grey;
-  color: white;
+  color: grey;
   padding: 1%;
   clear: both;
+  background-image: url("./swirl_pattern.png");
   }
+
+header {
+    font-size: 1.5em;
+}
+
+h1, h2 {
+    font-family: 'Patua One', cursive;
+}
 
 .column-1 {
   float: left;
   width: 48%;
   padding: 1%;
-  background-color: blue;
+  background-color: lightgrey;
+  color: grey;
 }
 
 .column-2 {
   float: left;
   width: 48%;
   padding: 1%;
-  background-color: green;
+  background-color: lightgrey;
+  color: grey;
 }
 
 section {
-  background-image: url("www.toptal.com/designers/subtlepatterns/patterns/swirl_pattern.png");
+  
 }
 
 footer {
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover {
+    color: darkgray;
 }
