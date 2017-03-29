@@ -60,3 +60,5 @@ while num_employees > 0
   
   num_employees -= 1
 end 
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's be friends."
