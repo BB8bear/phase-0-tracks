@@ -1,27 +1,33 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #e8e8e8;
 }
 
 header, footer {
   color: grey;
   padding: 1%;
   clear: both;
-  background-image: url("./swirl_pattern.png");
   }
 
 header {
     font-size: 1.5em;
+    background-image: url("./swirl_pattern.png");
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
 }
 
 h1, h2 {
     font-family: 'Patua One', cursive;
+    letter-spacing: 2px;
+}
+
+.bold {
+    font-weight: bolder;
 }
 
 .column-1 {
   float: left;
   width: 48%;
   padding: 1%;
-  background-color: lightgrey;
   color: grey;
 }
 
@@ -29,7 +35,6 @@ h1, h2 {
   float: left;
   width: 48%;
   padding: 1%;
-  background-color: lightgrey;
   color: grey;
 }
 
@@ -39,13 +44,14 @@ section {
 
 footer {
     text-align: center;
+    background-color: lightgray;
 }
 
 a {
     text-decoration: none;
-    color: gray;
+    color: #9c9c9c;
 }
 
 a:hover {
-    color: darkgray;
+    color: white;
 }
