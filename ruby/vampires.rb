@@ -1,3 +1,4 @@
+
 puts "How many employees will be processed?"
 num_employees = gets.chomp.to_i
 
