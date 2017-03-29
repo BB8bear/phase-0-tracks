@@ -1,3 +1,28 @@
-p {
-    color: red;
+header, footer {
+  background-color: grey;
+  color: white;
+  padding: 1%;
+  clear: both;
+  }
+
+.column-1 {
+  float: left;
+  width: 48%;
+  padding: 1%;
+  background-color: blue;
+}
+
+.column-2 {
+  float: left;
+  width: 48%;
+  padding: 1%;
+  background-color: green;
+}
+
+section {
+  background-image: url("www.toptal.com/designers/subtlepatterns/patterns/swirl_pattern.png");
+}
+
+footer {
+    text-align: center;
 }
