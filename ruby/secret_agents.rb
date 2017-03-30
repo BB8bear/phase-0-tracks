@@ -6,7 +6,7 @@
 # 4. Repeat until end of string
 # 5. Print the final result
 
-
+# Encrypt method
 def encrypt(str)
 index = 0 
 while index < str.length
@@ -31,6 +31,7 @@ end
 # 5. Repeat until end of string
 # 6. Print the final result
 
+# Decrypt method
 def decrypt(str)
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 index = 0 
@@ -42,13 +43,15 @@ puts "#{str}"
 return str 
 end 
 
-
+# Ask the user whether they would like to encrypt or decrypt
 puts "Would you like to decrypt or encrypt a password?"
 input = gets.chomp
 
+# asks for the password
 puts "What is the password?"
 password = gets.chomp 
 
+# either encrypts or decrypts the password
 if input == "encrypt"
   puts encrypt(password)
 elsif input == "decrypt" 
@@ -57,7 +60,7 @@ else
   puts "Error"
 end
 
-
+# Test cases
 # encrypt("abc") 
 # encrypt("zed") 
 # decrypt("bcd") 
