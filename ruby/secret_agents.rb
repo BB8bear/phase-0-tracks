@@ -43,7 +43,22 @@ return str
 end 
 
 
-encrypt("abc") 
-encrypt("zed") 
-decrypt("bcd") 
-decrypt("afe")
+puts "Would you like to decrypt or encrypt a password?"
+input = gets.chomp
+
+puts "What is the password?"
+password = gets.chomp 
+
+if input == "encrypt"
+  puts encrypt(password)
+elsif input == "decrypt" 
+  puts decrypt(password)
+else
+  puts "Error"
+end
+
+
+# encrypt("abc") 
+# encrypt("zed") 
+# decrypt("bcd") 
+# decrypt("afe")
