@@ -1,9 +1,9 @@
 # Encrypt Pseudocode
 # 1. Set index variable counter to 0 so it will match index
 # 2. Create a loop that runs for each letter in the string
-#   a. take the input for the first index spot and use .next to get the following character
-# 3. increase the index count to get to the next character in the string
-# 4. repeat until end of string
+#   a. Take the input for the first index spot and use .next to get the following character
+# 3. Increase the index count to get to the next character in the string
+# 4. Repeat until end of string
 # 5. Print the final result
 
 
@@ -22,6 +22,14 @@ return str
 end 
 
 
+# Decrypt Pseudocode
+# 1. Set the entire alphabet so we have a string to work from
+# 2. Set index variable counter to 0 so it will match index
+# 3. Create a loop that runs for each letter in the string
+#   a. Take the input character and assign it to the previous character by finding it within the alphabet variable and moving one space back
+# 4. Increase the index count to get to the next character in the string
+# 5. Repeat until end of string
+# 6. Print the final result
 
 def decrypt(str)
 alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -33,17 +41,6 @@ end
 puts "#{str}"
 return str 
 end 
-
-
-
-# def encrypt(str)
-# index = 0 
-# while index < str.length 
-#   str[index] = str[index].next
-#   index += 1
-# end 
-# puts "#{str}"
-# end 
 
 
 encrypt("abc") 
