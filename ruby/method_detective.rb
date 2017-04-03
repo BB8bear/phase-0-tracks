@@ -15,7 +15,7 @@
 # => “zoom”
 "hello".gsub(/[aeiou]/, "*")
 # => "h*ll*"
-"damn".gsub(/aeiou]/, "*")
+"damn".gsub(/[aeiou]/, "*")
 # => "d*mn"
 
 "enhance".center(4)
@@ -40,10 +40,10 @@
 " suspects".insert(0, "the usual")
 # => "the usual suspects"
 " world".insert(0, "hello")
-=> "hello world"
+# => "hello world"
 # -or-
 " suspects".prepend("the usual")
-=> "the usual suspects"
+# => "the usual suspects"
 
 "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
