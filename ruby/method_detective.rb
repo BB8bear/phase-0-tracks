@@ -4,26 +4,50 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+"iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
+"ChEeSe".swapcase
+# => "cHeEsE"
+"CaT".swapcase
+# => "cAt"
 
-# "zom".<???>
+"zom".gsub(/[o]/, "oo")
 # => “zoom”
+"hello".gsub(/[aeiou]/, "*")
+# => "h*ll*"
+"damn".gsub(/aeiou]/, "*")
+# => "d*mn"
 
-# "enhance".<???>
+"enhance".center(4)
 # => "    enhance    "
+"cat".center(5)
+# => "     cat     "
+"dog".center(2)
+# => "  dog  "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
+"Cats are cute!".upcase
+# => "CATS ARE CUTE!"
+"Mmm, cereal.".upcase
+# => "MMM, CEREAL."
 
-# "the usual".<???>
+"the usual" << " suspects"
 #=> "the usual suspects"
+"hello" << " world"
+# => "hello world"
 
-# " suspects".<???>
+" suspects".insert(0, "the usual")
 # => "the usual suspects"
+" world".insert(0, "hello")
+=> "hello world"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
+"String".chop
+# => "Strin"
+"x".chop
+# => ""
 
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
