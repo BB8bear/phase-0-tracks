@@ -47,3 +47,4 @@ p closet[:storage_bins][:scarves][2]
 closet[:hanging_rack][:hangers].push("jackets")
 p closet
 p closet[:hanging_rack][:hangers][-1]
+p closet[:shoe_rack]
