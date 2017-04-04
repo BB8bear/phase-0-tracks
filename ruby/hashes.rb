@@ -25,15 +25,15 @@ client_preferences = {
 
 puts "Please enter the following client details."
 puts "Client name:"
-:name << gets.chomp.to_str
+:name = gets.chomp.to_str
 puts "Client age:"
-:age << gets.chomp.to_i
+:age = gets.chomp.to_i
 puts "Number of client children:"
-:num_children << gets.chomp.to_i
+:num_children = gets.chomp.to_i
 puts "Decor theme:"
-:decor_theme << gets.chomp.to_str
+:decor_theme = gets.chomp.to_str
 puts "Least favorite color:"
-:avoid_color << gets.chomp.to_str
+:avoid_color = gets.chomp.to_str
 
 p client_preferences
 
