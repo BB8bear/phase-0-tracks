@@ -1,3 +1,14 @@
+
+# Release 1 Do The Thing
+def this_method
+  puts "Hello how are you?"
+
+ yield("Sucky")
+end
+this_method { |response| puts "#{response} ...that's too bad!" }
+
+
+# Release 2 Do The Thing
 cereal = ['Frosted Flakes', 'Cheerios', 'Pops', 'Wheaties']
 
 animal_babies = {
