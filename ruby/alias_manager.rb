@@ -31,3 +31,23 @@ def vowel_rotate(name)
 end
 
 p vowel_rotate "aeiouyz"
+
+# Replace consonants with next consonant
+def consonant_rotate(name)
+    consonants = %w[b c d f g h j k l m n p q r s t v w x y z]
+    capital_consonants =%w[B C D F G H J K L M N P Q R S T V W X Y Z]
+
+    name = name.downcase.split('')
+
+    name_crotate = name.map { |char|
+        if consonants.include?(char)
+            consonants.rotate(1)[consonants.index(char)]
+        else
+            char           
+        end
+    }
+    agent_name = name_crotate.join
+    agent_name.split.map{ |x| x.capitalize}.join(' ')
+end
+
+p consonant_rotate "Rachel Kerner"
