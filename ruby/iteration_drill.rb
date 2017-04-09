@@ -5,10 +5,37 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
+
+zombie_apocalypse_supplies.each { |item|
+    print item + " * "
+}
+
 # ----
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
+
+sorted_array = []
+
+until zombie_apocalypse_supplies.length == 0
+
+
+
+    lowest_item = zombie_apocalypse_supplies[0]
+
+    zombie_apocalypse_supplies.each { |current_item|
+        if current_item.downcase < lowest_item.downcase
+            lowest_item = current_item
+        end 
+    }
+
+    sorted_array << lowest_item
+    zombie_apocalypse_supplies.delete(lowest_item)
+
+end
+
+p sorted_array
+
 # ----
 
 # 3. Create a method to see if a particular item (string) is in the
