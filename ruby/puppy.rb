@@ -14,3 +14,6 @@
 # Bite
 # Lick
 # Play
+
+class Puppy
+end
