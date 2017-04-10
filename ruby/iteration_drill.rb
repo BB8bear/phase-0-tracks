@@ -41,11 +41,39 @@ p sorted_array
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
+
+def does_exist(array, string)
+  array.each { |item|
+    if item == string 
+      puts "'#{string}' is in your list of supplies"
+      return
+    end
+  }
+  puts "'#{string}' is not in your list of supplies"
+end
+
+does_exist(zombie_apocalypse_supplies, "hatchet") 
+does_exist(zombie_apocalypse_supplies, "boots")
+
 # ----
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
+
+until zombie_apocalypse_supplies.length == 5
+    zombie_apocalypse_supplies.each { |current_item|
+        if current_item.downcase < lowest_item.downcase
+            lowest_item = current_item
+        end 
+    }
+
+    sorted_array << lowest_item
+    zombie_apocalypse_supplies.delete(lowest_item)
+
+end
+
+
 # ----
 
 # 5. You found another survivor! This means you can combine your supplies.
