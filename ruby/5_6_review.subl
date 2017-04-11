@@ -1,0 +1,17 @@
+Create an array of numbers
+Define a method that takes an array of integers and an integer to search for
+Method needs to arguments
+Argument #1 is the array
+Argument #2 is the integer to search for
+The output is the index within the array if it is there, or nil if it does not exist 
+
+
+
+integersArray = [1, 2, 3, 4, 5]
+
+def search_array(integersArray, int)
+    integersArray.each do |integer|
+
+
+    end
+end
