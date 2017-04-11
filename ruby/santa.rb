@@ -93,3 +93,6 @@ end
 santas.length.times do |i|
   puts "The #{santas[i].gender} #{santas[i].ethnicity} #{santas[i].age} year old Santa turns #{santas[i].celebrate_birthday} next year."
 end
+
+# Release 4
+
