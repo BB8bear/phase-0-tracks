@@ -138,32 +138,12 @@ end
 genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
 ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
 
-count = 0
-
-(1..100).each do |santa|
+(1..100).each do |count|
     santa = Santa.new
     
     age = santa.randomAge
     gender = santa.random(genderArray) 
     ethnicity = santa.random(ethnicityArray)
     
-    count += 1
-    
-    p "Santa #{count} is a #{ethnicity} #{gender} #{age}-year old."
+    p "Santa ##{count} is a #{age}-year old #{gender} #{ethnicity}."
 end
-
-
-santas = []
-
-genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
-ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
-
-# Method to pull a random item from an array
-def random(array)
-    array.sample
-end
-
-# Method to return a random age between 1 and 140
-def randomAge
-  (1..140).to_a.sample
-end 
