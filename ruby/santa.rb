@@ -97,53 +97,34 @@
 # Release 4
 
 class Santa
-    attr_reader :reindeer_ranking
     attr_accessor :age, :gender, :ethnicity
 
     def initialize
-        @gender = gender
-        @ethnicity = ethnicity
-        @age = age
-        @reindeer_ranking = ['Rudolph', 'Dasher', 'Dancer', 'Prancer', 'Vixen', 'Comet', 'Cupid', 'Donner', 'Blitzen']
+        @gender = randomGender
+        @ethnicity = randomEthnicity
+        @age = randomAge
     end  
 
-    def speak
-        p "Ho, ho, ho! Haaaappy holidays!"
-    end
-
-    def eat_milk_and_cookies(cookie_type)
-        p "That was a good #{cookie_type} cookie!"
-    end
-
-    def celebrate_birthday
-        @age + 1
-    end
-
-    def gets_mad_at(reindeer_name)
-        reindeer_ranking.delete(reindeer_name)
-        reindeer_ranking << reindeer_name
-    end
-    
     # Method to return a random age between 1 and 140
     def randomAge
-        (1..140).to_a.sample
+        return (1..140).to_a.sample
     end
     
-    # Method to pull a random item from an array
-    def random(array)
-        array.sample
+    # Method to create a random gender
+    def randomGender
+        genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
+        return genderArray.sample
     end
+      
+    # Method to create random ethnicity
+    def randomEthnicity
+        ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
+        return ethnicityArray.sample
+    end 
 end
-
-genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
-ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
 
 (1..100).each do |count|
     santa = Santa.new
     
-    age = santa.randomAge
-    gender = santa.random(genderArray) 
-    ethnicity = santa.random(ethnicityArray)
-    
-    p "Santa ##{count} is a #{age}-year old #{gender} #{ethnicity}."
+    p "Santa ##{count} is a #{santa.age}-year old #{santa.gender} #{santa.ethnicity}."
 end
