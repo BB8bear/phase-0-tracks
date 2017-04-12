@@ -97,11 +97,10 @@
 # Release 4
 
 class Santa
-    attr_reader :ethnicity, :reindeer_ranking
-    attr_accessor :age, :gender
+    attr_reader :reindeer_ranking
+    attr_accessor :age, :gender, :ethnicity
 
-    def initialize(gender, ethnicity, age)
-        p "Initializing Santa instance..."
+    def initialize
         @gender = gender
         @ethnicity = ethnicity
         @age = age
@@ -124,6 +123,33 @@ class Santa
         reindeer_ranking.delete(reindeer_name)
         reindeer_ranking << reindeer_name
     end
+    
+    # Method to return a random age between 1 and 140
+    def randomAge
+        (1..140).to_a.sample
+    end
+    
+    # Method to pull a random item from an array
+    def random(array)
+        array.sample
+    end
+end
+
+genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
+ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
+
+count = 0
+
+(1..100).each do |santa|
+    santa = Santa.new
+    
+    age = santa.randomAge
+    gender = santa.random(genderArray) 
+    ethnicity = santa.random(ethnicityArray)
+    
+    count += 1
+    
+    p "Santa #{count} is a #{ethnicity} #{gender} #{age}-year old."
 end
 
 
