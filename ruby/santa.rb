@@ -98,7 +98,7 @@
 
 class Santa
     GENDER_ARRAY = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
-    ETHNICITY_ARRAY = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
+    ETHNICITY_ARRAY = ['African American', 'Latino', 'Caucasian', 'Pacific Islander', 'Native American', 'Alaska Native']
 
     attr_accessor :age, :gender, :ethnicity
 
