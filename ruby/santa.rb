@@ -97,6 +97,9 @@
 # Release 4
 
 class Santa
+    GENDER_ARRAY = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
+    ETHNICITY_ARRAY = ['African American', 'Latino', 'Caucasian', 'Pacific Islander', 'Native American', 'Alaska Native']
+
     attr_accessor :age, :gender, :ethnicity
 
     def initialize
@@ -112,14 +115,13 @@ class Santa
     
     # Method to create a random gender
     def assign_random_gender
-        genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
-        @gender = genderArray.sample
+        @gender = GENDER_ARRAY.sample
     end
       
     # Method to create random ethnicity
     def assign_random_ethnicity
-        ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
-        @ethnicity = ethnicityArray.sample
+        
+        @ethnicity = ETHNICITY_ARRAY.sample
     end 
 end
 
