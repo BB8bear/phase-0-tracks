@@ -1,3 +1,5 @@
+list = "carrots apples cereal pizza bananas celery"
+
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
@@ -7,12 +9,30 @@
   # 4. Print the list to the console with Print a List method below
 # output: Hash
 
+def create_list(list)
+    grocery_items = {}
+
+    new_list = list.split(" ")
+
+    new_list.each do |item|
+        grocery_items[item] = 0
+    end
+    grocery_items
+end
+
+p create_list(list)
+
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps: 
   # 1. Add new key and value to the hash
   # 2. Print the list to the console with the Print a List method below
 # output: Hash with updated keys and values
+
+def add_item(list, item_name, quantity)
+    
+end
+
 
 # Method to remove an item from the list
 # input: list, item name
