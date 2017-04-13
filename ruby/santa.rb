@@ -100,31 +100,33 @@ class Santa
     attr_accessor :age, :gender, :ethnicity
 
     def initialize
-        @gender = randomGender
-        @ethnicity = randomEthnicity
-        @age = randomAge
+        @gender = ""
+        @ethnicity = ""
+        @age = 0
     end  
 
     # Method to return a random age between 1 and 140
-    def randomAge
-        return (1..140).to_a.sample
+    def assign_random_age
+        @age = (1..140).to_a.sample
     end
     
     # Method to create a random gender
-    def randomGender
+    def assign_random_gender
         genderArray = ['agender', 'female', 'bigender', 'male', 'gender fluid', 'transgender']
-        return genderArray.sample
+        @gender = genderArray.sample
     end
       
     # Method to create random ethnicity
-    def randomEthnicity
+    def assign_random_ethnicity
         ethnicityArray = ['Black', 'Latino', 'White', 'Pacific Islander', 'Native American', 'Alaska Native']
-        return ethnicityArray.sample
+        @ethnicity = ethnicityArray.sample
     end 
 end
 
 (1..100).each do |count|
     santa = Santa.new
-    
+    santa.assign_random_gender
+    santa.assign_random_ethnicity
+    santa.assign_random_age
     p "Santa ##{count} is a #{santa.age}-year old #{santa.gender} #{santa.ethnicity}."
 end
