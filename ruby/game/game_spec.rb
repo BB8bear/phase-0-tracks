@@ -20,5 +20,9 @@ describe WordguessGame do
     it "checks guess against word for each instance of guess in word" do
         expect(game.valid_guess("u")).to be_truthy
     end 
+
+    it "adds guess to guessed character array" do
+        expect(game.guess_characters("b")).to eq "b"
+    end
 end
     

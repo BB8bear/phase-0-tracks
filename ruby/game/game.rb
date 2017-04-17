@@ -37,6 +37,7 @@ class WordguessGame
 
     def guess_characters(guess)
         @guess_char_array.push(guess)
+        return guess_char_array
     end
 
     def check_for_end
