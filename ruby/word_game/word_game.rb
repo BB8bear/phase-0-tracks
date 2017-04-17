@@ -18,8 +18,7 @@
 
 
 class WordguessGame
-    attr_accessor :word_output
-    attr_reader :guess_count
+    attr_reader :is_over
 
     def initialize(word)
         @word = word
@@ -27,15 +26,40 @@ class WordguessGame
         @is_over = false
         @guess_char_array = []
         @word_output = ''
+        @total_allowed_guesses = @word.length + 5
     end
 
     def guess_characters(guess)
         @guess_char_array.push(guess)
     end
 
-    def create_output
-        @word.each_char do 
-            @word_output.concat('_')
+    def valid_guess(guess)
+        index_tracker = 0
+
+        until index_tracker == nil
+            index_tracker = @word.index(guess, index_tracker)
+            if index_tracker != nil
+                @word_output[index_tracker] = guess
+                index_tracker += 1
+            end
+        end
+    end
+
+    def print_the_word
+        @word_output.each_char do |character|
+            print character + " "
+        end
+        puts
+    end
+
+    def check_for_end
+        if @word == @word_output
+            p "You win!"
+            @is_over = true
+
+        elsif @guess_count >= @total_allowed_guesses
+            p "You suck!"
+            @is_over = true
         end
     end
 
@@ -46,27 +70,23 @@ class WordguessGame
 
             if @word.include? guess
                 valid_guess(guess)
-
-
-                #check index of guess letter in word character array
-                #Output goes here
+                print_the_word
             else 
                 p "Guess again!"
             end
+            check_for_end
         end
     end
 
-    def valid_guess(guess)
-        index_tracker = 0
-
-        until index_tracker == nil
-            index_tracker = @word.index(guess, index_tracker)
-            if index_tracker != nil
-                @word_output[index_tracker] = guess
-            end
+    def create_output
+        @word.each_char do 
+            @word_output.concat("_")
         end
     end
-    
+
+    def guesses_left
+        return @total_allowed_guesses - @guess_count
+    end
 end
 
 # user interface
@@ -78,13 +98,10 @@ puts "Organizing word board..."
 game.create_output
 
 while !game.is_over
-    puts "You have #{} guesses left."
-    p game.word_output
-
+    puts "You have #{game.guesses_left} guesses left."
+    puts
     puts "Guess a letter!"
     guess = gets.chomp
 
     game.check_guess(guess)
-
-
 end
