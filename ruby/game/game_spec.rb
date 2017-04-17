@@ -37,5 +37,9 @@ describe WordguessGame do
     it "returns total guesses left" do
         expect(game.guesses_left).to eq 12
     end
+
+    it "displays current state in letters guessed vs guesses left" do
+        expect(game.create_output).to eq("_______")
+    end
 end
     

@@ -87,9 +87,15 @@ class WordguessGame
             print character + " "
         end
     end
-    
+
     def guesses_left
         return @total_allowed_guesses - @guess_count
     end
 
+    def create_output
+        @word.each_char do 
+            @word_output.concat("_")
+        end
+        p @word_output
+    end
 end
