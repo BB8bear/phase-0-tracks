@@ -29,5 +29,9 @@ describe WordguessGame do
         game.guess_characters("c")
         expect(game.do_guesses_include("c")).to be_falsey
     end
+
+    it "checks if word includes guess" do
+        expect(game.does_word_include("u")).to be_truthy
+    end
 end
     

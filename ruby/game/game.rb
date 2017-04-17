@@ -72,4 +72,21 @@ class WordguessGame
         end
     end
 
+    def does_word_include(guess)
+        if @word.include? guess
+          valid_guess(guess)
+          print_the_word
+          return true
+        else 
+          p "Guess again!"
+        end
+    end
+
+    def print_the_word
+        @word_output.each_char do |character|
+            print character + " "
+        end
+    end
+
+    
 end
