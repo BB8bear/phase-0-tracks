@@ -17,7 +17,7 @@
 # check is the game over - read
 
 class WordguessGame
-    attr_reader :word
+    attr_reader :word 
     attr_accessor :word_output
 
     def initialize(word)
@@ -37,7 +37,7 @@ class WordguessGame
 
     def guess_characters(guess)
         @guess_char_array.push(guess)
-        return guess_char_array
+        return @guess_char_array
     end
 
     def check_for_end
@@ -61,6 +61,14 @@ class WordguessGame
                 index_tracker += 1
                 return true
             end
+        end
+    end
+
+    def do_guesses_include(guess)
+        if !@guess_char_array.include? guess 
+            guess_characters(guess)
+            @guess_count += 1 
+            return true
         end
     end
 

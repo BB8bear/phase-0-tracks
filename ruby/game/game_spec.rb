@@ -22,7 +22,12 @@ describe WordguessGame do
     end 
 
     it "adds guess to guessed character array" do
-        expect(game.guess_characters("b")).to eq "b"
+        expect(game.guess_characters("b")).to eq ["b"]
+    end
+
+    it "checks if guess array includes new guess" do
+        game.guess_characters("c")
+        expect(game.do_guesses_include("c")).to be_falsey
     end
 end
     
