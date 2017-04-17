@@ -17,8 +17,8 @@
 # check is the game over - read
 
 class WordguessGame
-    attr_reader :word 
-    attr_accessor :word_output
+    attr_reader :word, :is_over
+    attr_accessor :word_output, :check_for_end
 
     def initialize(word)
         @word = word
@@ -59,7 +59,7 @@ class WordguessGame
             if index_tracker != nil
                 @word_output[index_tracker] = guess
                 index_tracker += 1
-                return true
+                # return true
             end
         end
     end
@@ -68,7 +68,7 @@ class WordguessGame
         if !@guess_char_array.include? guess 
             guess_characters(guess)
             @guess_count += 1 
-            return true
+            # return true
         end
     end
 
@@ -76,7 +76,7 @@ class WordguessGame
         if @word.include? guess
           valid_guess(guess)
           print_the_word
-          return true
+          # return true
         else 
           p "Guess again!"
         end
@@ -91,11 +91,28 @@ class WordguessGame
     def guesses_left
         return @total_allowed_guesses - @guess_count
     end
+end
 
-    def create_output
-        @word.each_char do 
-            @word_output.concat("_")
-        end
-        p @word_output
+# user interface
+
+puts "Welcome to the Word Guess Game!"
+puts
+puts "Player 1, please enter a word for player 2 to guess."
+word = gets.chomp
+
+game = WordguessGame.new(word)
+
+puts "Organizing word board..."
+game.create_output
+
+while !game.is_over
+    puts "You have #{game.guesses_left} guesses left."
+    puts
+    puts "Guess a letter!"
+    guess = gets.chomp
+
+    if game.do_guesses_include(guess)
+      game.does_word_include(guess)
+      game.check_for_end
     end
 end

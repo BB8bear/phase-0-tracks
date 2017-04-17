@@ -38,8 +38,10 @@ describe WordguessGame do
         expect(game.guesses_left).to eq 12
     end
 
-    it "displays current state in letters guessed vs guesses left" do
+    it "creates starting point for word guess display" do
         expect(game.create_output).to eq("_______")
     end
+
+    
 end
     
