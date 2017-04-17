@@ -87,6 +87,9 @@ class WordguessGame
             print character + " "
         end
     end
-
     
+    def guesses_left
+        return @total_allowed_guesses - @guess_count
+    end
+
 end

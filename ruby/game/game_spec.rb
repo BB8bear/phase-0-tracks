@@ -33,5 +33,9 @@ describe WordguessGame do
     it "checks if word includes guess" do
         expect(game.does_word_include("u")).to be_truthy
     end
+
+    it "returns total guesses left" do
+        expect(game.guesses_left).to eq 12
+    end
 end
     
