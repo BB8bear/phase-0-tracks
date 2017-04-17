@@ -34,7 +34,7 @@ class WordguessGame
     end
 
     def create_output
-        @word.each do 
+        @word.each_char do 
             @word_output.concat('_')
         end
     end
@@ -45,14 +45,28 @@ class WordguessGame
             @guess_count += 1
 
             if @word.include? guess
+                valid_guess(guess)
+
+
                 #check index of guess letter in word character array
                 #Output goes here
             else 
                 p "Guess again!"
             end
         end
-   
     end
+
+    def valid_guess(guess)
+        index_tracker = 0
+
+        until index_tracker == nil
+            index_tracker = @word.index(guess, index_tracker)
+            if index_tracker != nil
+                @word_output[index_tracker] = guess
+            end
+        end
+    end
+    
 end
 
 # user interface
@@ -63,10 +77,10 @@ game = WordguessGame.new("unicorn")
 puts "Organizing word board..."
 game.create_output
 
-puts "You have #{} guesses left."
-p game.word_output
-
 while !game.is_over
+    puts "You have #{} guesses left."
+    p game.word_output
+
     puts "Guess a letter!"
     guess = gets.chomp
 
