@@ -10,8 +10,30 @@
 # Output feedback after each guess showing which letters have been guessed in which spaces
 
 # Class must have variables for
-# word storage - read
+# word - read
 # word character array - read
 # guess character array - read/write
-# store number of guesses - read/write
+# store guess count - read/write
+# check is the game over - read
 
+
+class WordguessGame
+    attr_accessor 
+    attr_reader
+
+    def initialize(word)
+        @word = word
+        @guess_count = 0
+        @is_over = false
+        @guess = guess
+    end
+
+    def word_characters(word)
+        word_char_array = word.split(//)
+    end
+
+    def guess_characters(guess)
+        guess_char_array.push(guess)
+    end
+
+    
