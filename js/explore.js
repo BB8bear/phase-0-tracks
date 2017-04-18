@@ -10,9 +10,11 @@
 // var string = "hello";
 // var first = string.charAt(string.length-1);
 // console.log(first);
-var newString = "";
+
 
 function reverseString(string) {
+    var newString = "";
+
     for (var i = string.length-1; i >= 0; i -= 1) {
         newString += string.charAt(i);
     }
@@ -20,3 +22,4 @@ function reverseString(string) {
 }
 
 console.log(reverseString("hello"));
+console.log(reverseString("taco cat"));
