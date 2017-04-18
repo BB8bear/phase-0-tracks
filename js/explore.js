@@ -18,9 +18,20 @@ function reverseString(string) {
     for (var i = string.length-1; i >= 0; i -= 1) {
         newString += string.charAt(i);
     }
-    console.log((newString));
-    console.log(("(" + string + ")"));    
+    return newString; 
 }
 
-console.log(reverseString("hello"));
-console.log(reverseString("taco cat"));
+var string1 = reverseString("hello");
+var string2 = reverseString("taco cat");
+var string3 = reverseString("batman");
+
+// OR
+
+// function reverseStringv2(string) {
+//     console.log(string.split('').reverse().join(''));
+// }
+
+
+console.log(string1);
+console.log(string2);
+console.log(string3);
