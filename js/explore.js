@@ -18,7 +18,8 @@ function reverseString(string) {
     for (var i = string.length-1; i >= 0; i -= 1) {
         newString += string.charAt(i);
     }
-    return(newString);    
+    console.log((newString));
+    console.log(("(" + string + ")"));    
 }
 
 console.log(reverseString("hello"));
