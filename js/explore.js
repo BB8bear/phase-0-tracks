@@ -32,6 +32,6 @@ var string3 = reverseString("batman");
 // }
 
 
-console.log(string1);
-console.log(string2);
-console.log(string3);
+if (1 == 1) { console.log(string1); }
+if ("cat" == "cat") { console.log(string2); }
+if (5 < 7) { console.log(string3); }
