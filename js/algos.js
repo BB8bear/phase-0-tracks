@@ -1,4 +1,5 @@
-// Release 0: Find the Longest Phrase
+// Find the Longest Phrase
+
 // Create an array variable that stores the words to check.
 // Set a variable to store the current biggest string
 // Create a loop that iterates over each item in the array.
@@ -11,11 +12,19 @@
 // Continue comparing the remainder of the array
 // Return the largest string stored in variable
 
-
-
-
+function findBiggestString(array) {
+    var biggestString = "";
+  
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].length > biggestString.length) {
+            biggestString = array[i];
+        }
+    }
+    return biggestString;
+}
 
 var animals = ["kitten", "dog", "bunny", "bird", "giraffe"];
 
+console.log(findBiggestString(animals));
 
 
