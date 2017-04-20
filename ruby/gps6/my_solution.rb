@@ -17,6 +17,8 @@ class VirusPredictor
     @population_density = population_density
   end
 
+
+
 # method virus_effects - 
 # runs predicted_deaths method using the instance variables given
 # runs speed_of_spread method using the instance variables given
@@ -25,7 +27,7 @@ class VirusPredictor
     speed_of_spread(@population_density, @state)
   end
 
-  private
+private # can only be used within the class  
 
 # method predicted_deaths - takes variables:
 # uses population_density to decide which density calculation to use
@@ -33,19 +35,24 @@ class VirusPredictor
 # uses state variable when printing the result
 # calculates number_of_deaths using population and uses .floor to round down the result
 # prints final results based on population density category
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths  # removed variables because they exist in initialize/instance variables
     # predicted deaths is solely based on population density
+    population_scaling = 0 #create variable to store scaling for calculating number_of_deaths
+    # instead of running the number_of_deaths caluclation for every population density
+
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      population_scaling = 0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      population_scaling = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      population_scaling = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      population_scaling = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      population_scaling = 0.05
     end
+
+    number_of_deaths = (@population * population_scaling).floor
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -54,7 +61,7 @@ class VirusPredictor
 # method speed_of_spread - takes variables:
 # uses population_density to decide which speed calculation to use
 # uses state variable is currently not being used
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months. removed variables because they exist in initialize/instance variables
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -82,18 +89,27 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+# Make a loop that iterates over every key in STATE_DATA hash
+# for each iteration, create a report for that state using .virus_effects
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+STATE_DATA.each do |state, population_information|
+  new_state = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+  new_state.virus_effects
+end
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
+
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
+
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
+
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
 
 #=======================================================================
