@@ -58,6 +58,71 @@ function doesItMatch(item1, item2) { //Create a function that takes two object v
 // console.log(doesItMatch(object1, object3));
 // console.log(doesItMatch(object1, object4));
 
+// Generate Random Test Data
+
+// write a function that creates a random number within a range
+// function should take a min and max number for the range
+// use Math.floor and Math.random to generate a random whole number
+// set a max number by subtracting the max from min
+// add 1 after to account for Math.random not being inclusive of max
+
+// write a function to make a random word
+// create alphabet variable
+// create word storage variable
+// set word length variable to random number using random number function
+// loop through word length at each index
+// select a random letter from alphabet string
+// add it to the end of the word storage variable
+// return the word once loop is complete
+
+// write a function to make a random array that takes an integer for array length
+// create array storage variable
+// loop through the array length
+// for each iteration, use random word function
+// push the random word into the storage array
+// return the final array
+
+// write driver code that loops through 10 times
+// for each time through the loop generate an array and assign it to a variable
+// print the array variable 
+// print the biggest string of the array using the biggest string function with the new array variable as the call
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function makeRandomWord() {
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    //generate a random number (x)
+    //generate a random number x number of times
+    //return the word
+    var word = "";
+    
+    var wordLength = getRandomInt(1, 10);
+    for (var i = 0; i < wordLength; i++) {
+      word += alphabet.charAt(getRandomInt(0, 25));
+    }
+    return word;
+}
 
 
+function randomArray(integer) {
+  var returnArray = [];
+  
+  for (var i = 0 ; i < integer; i++) {
+    returnArray.push(makeRandomWord());
+  }
+  return returnArray;
+}
+
+// console.log(randomArray(3));
+// console.log(randomArray(7));
+
+
+
+for (var i = 1; i < 10; i ++) {
+  var newArray = randomArray(3);
+  console.log(newArray);
+  console.log(findBiggestString(newArray));
+}
 
