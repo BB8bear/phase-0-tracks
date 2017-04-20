@@ -4,8 +4,8 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# require - needs an absolute path from root
-# require_relative - can use relative path to file
+# require - needs an absolute path from root, working with external sources like gems and libraries
+# require_relative - can use relative path to file, working with your own code
 require_relative 'state_data'
 
 class VirusPredictor
