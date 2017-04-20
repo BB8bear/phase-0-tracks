@@ -25,7 +25,7 @@ function findBiggestString(array) {
 
 var animals = ["kitten", "dog", "bunny", "bird", "giraffe"];
 
-console.log(findBiggestString(animals));
+// console.log(findBiggestString(animals));
 
 // Find a key-value match
 
@@ -39,11 +39,6 @@ console.log(findBiggestString(animals));
 // If there is a match, object2 has a matching key and value because you could find the value by key
 // otherwise return false after checking entire loop
 
-var object1 = {name: "Steven", age: 54};
-var object2 = {name: "Tamir", age: 54};
-var object3 = {name: "Jimmy Dean", age: 12};
-var object4 = {height: 34, weight: 17};
-
 function doesItMatch(item1, item2) { //Create a function that takes two object variables
   
   for (var key in item1) {
@@ -53,6 +48,11 @@ function doesItMatch(item1, item2) { //Create a function that takes two object v
   }
   return false;
 }
+
+// var object1 = {name: "Steven", age: 54};
+// var object2 = {name: "Tamir", age: 54};
+// var object3 = {name: "Jimmy Dean", age: 12};
+// var object4 = {height: 34, weight: 17};
 
 // console.log(doesItMatch(object1, object2));
 // console.log(doesItMatch(object1, object3));
