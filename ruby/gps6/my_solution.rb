@@ -114,3 +114,22 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # The first hash syntax has a string as a key, because you want to print it within the my_solution file. 
+  # The second hash has a symbol as a key, because you do not need to print it within the my_solution file.
+
+# What does require_relative do? How is it different from require?
+  # require_relative finds the called file relative to the current file, best to use when working with your own code
+  # require needs an absolute path from root, is best to use for external sources like libraries
+
+# What are some ways to iterate through a hash?
+  # You can iterate through a hash based on key/value pair with .each {|k,v| block}
+  # You can iterate through a hash based on each key with .each_key {|k| block}
+  # You can iterate through a hash based on each key but using the value as the parameter with .each_key {|v| block}
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # virus_effects was not using state at all within the method, and all of the passed in variables were not necessary because the method was using instance variable calls
+
+# What concept did you most solidify in this challenge?
+  # I most solidifed the concept of private vs public methods, and relative vs require_relative
