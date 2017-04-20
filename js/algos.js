@@ -27,4 +27,17 @@ var animals = ["kitten", "dog", "bunny", "bird", "giraffe"];
 
 console.log(findBiggestString(animals));
 
+// Find a key-value match
+
+// create a function that will take two object variables
+// for...in loop can loop through properties of an object
+// for (variable in object) {
+//     code to be executed
+// }
+// assign key variable for first object to compare
+// compare if object1 value matches object2 value at object2 key
+// If there is a match, object2 has a matching key and value because you could find the value by key
+// otherwise return false after checking entire loop
+
+
 
