@@ -23,8 +23,8 @@ class VirusPredictor
 # runs predicted_deaths method using the instance variables given
 # runs speed_of_spread method using the instance variables given
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
 private # can only be used within the class  
