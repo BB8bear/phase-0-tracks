@@ -38,3 +38,10 @@ anotherCar.vroom();
 
 // Release 3
 
+// 1. You can loop over an object with a for...in statement, but will only loop over enumerable properties.
+//    You can also use the Object.keys() or Object.values() methods to return an array of an object's own enumerable properties
+//    in the same order as a for...in loop
+//    The difference is that a for-in loop enumerates properites from an Object's source protype.
+// 2. You can assign values to the objects key and value based on the values passed into the function, instead of typing everything out by hand.
+//    You can also create any number of new objects with your constructor.
+//    You can also pass statements instead of literal strings or integers.
