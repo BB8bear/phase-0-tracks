@@ -9,6 +9,8 @@ names.push("Diamond");
 // Release 1
 
 var horses = {};
+// OR
+// var horses = new Object();
 
 for (var i = 0; i < colors.length; i ++) {
     horses[names[i]] = colors[i];
