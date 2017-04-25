@@ -1,3 +1,5 @@
+Release 2:
+
 1. Display the information in one table (either table is fine).
     SELECT * FROM sca_fencers;
 
@@ -63,3 +65,59 @@
     3|Christopher Todesco|Tedesco de Venezia|1|1|1|Middle|1|Fabris
     5|Ernesto Maldonado|Nicollo Falconetto|3|2|3|Northshield|2|Destreza
     6|Arik Medelevitz|Raphael de Merisi|1|4|1|Middle|4|Capo Ferro
+
+Release 3:
+
+1. Cross join - match every row of the first table with every row of the second table. If tables have x and y columns, result will have x*y columns
+
+Inner join - creates new result table combining column values of two tables based on where they join. It compares all rows in table 1 and 2 and returns everything that has a pair.
+
+
+Outer join - similar to an inner join, but will put null values for anything without a pair.
+
+2. Cross join
+SELECT name, style FROM sca_fencers CROSS JOIN fencing_styles;
+
+Jim Lai|Fabris
+Jim Lai|Destreza
+Jim Lai|Giganti
+Jim Lai|Capo Ferro
+Jim Lai|unknown
+Timothy Lyon|Fabris
+Timothy Lyon|Destreza
+Timothy Lyon|Giganti
+Timothy Lyon|Capo Ferro
+Timothy Lyon|unknown
+Christopher Todesco|Fabris
+Christopher Todesco|Destreza
+Christopher Todesco|Giganti
+Christopher Todesco|Capo Ferro
+Christopher Todesco|unknown
+Ernesto Maldonado|Fabris
+Ernesto Maldonado|Destreza
+Ernesto Maldonado|Giganti
+Ernesto Maldonado|Capo Ferro
+Ernesto Maldonado|unknown
+Arik Medelevitz|Fabris
+Arik Medelevitz|Destreza
+Arik Medelevitz|Giganti
+Arik Medelevitz|Capo Ferro
+Arik Medelevitz|unknown
+
+Inner join
+SELECT name, style FROM sca_fencers INNER JOIN fencing_styles ON sca_fencers.fencing_style_id=fencing_styles.id;
+
+Jim Lai|Destreza
+Timothy Lyon|Fabris
+Christopher Todesco|Fabris
+Ernesto Maldonado|Destreza
+Arik Medelevitz|Capo Ferro
+
+Outer Join
+SELECT name, kingdom_name, style FROM sca_fencers LEFT OUTER JOIN kingdoms ON sca_fencers.kingdom_id=kingdoms.id LEFT OUTER JOIN fencing_styles ON sca_fencers.fencing_style_id=fencing_styles.id;
+
+Jim Lai|Middle|Destreza
+Timothy Lyon|Middle|Fabris
+Christopher Todesco|Middle|Fabris
+Ernesto Maldonado|Northshield|Destreza
+Arik Medelevitz|Middle|Capo Ferro
