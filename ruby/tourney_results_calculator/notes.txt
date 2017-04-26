@@ -49,3 +49,8 @@ db.execute(create_table_cmd)
 <!-- add test entrant -->
 db.execute("INSERT INTO tourney (name) VALUES ('Bob')")
 
+<!-- retrieve data -->
+tourney = db.execute(SELECT * FROM tourney)
+tourney.each do |entrant|
+    puts "#{entrant['name'] is in the database"
+end
