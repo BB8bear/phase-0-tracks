@@ -1,0 +1,51 @@
+Tourney Results Calculator
+
+This program will take a list 10 entrants for a fencing tournament in a round robin format (each fencer fights every other fencer in the pool) and return the win/loss results for each entrant once all bouts are entered.
+
+UI:
+Take 10 entrants as input
+Take winner and loser as a set
+Return win/loss results for all entrants
+
+Database:
+Create database with id, name, 10 blank columns from 1-10 for entrant ID (for tracking W/L), win tally column, loss tally column, place column
+
+Ruby program:
+Take winner/loser as a set
+- give winner a W in database in loser's ID column
+- give loser a L in database in winner's ID column
+
+<!-- require gems -->
+require 'sqlite3'
+require 'faker'
+
+<!-- create sqlite3 database -->
+db = SQLite3::Database.new("round_robin_tourney.db")
+
+<!-- create table -->
+create_table_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS tourney(
+        id INTEGER PRIMARY KEY,
+        name VARCHAR(255),
+        1 VARCHAR(255),
+        2 VARCHAR(255),
+        3 VARCHAR(255),
+        4 VARCHAR(255),
+        5 VARCHAR(255),
+        6 VARCHAR(255),
+        7 VARCHAR(255),
+        8 VARCHAR(255),
+        9 VARCHAR(255), 
+        10 VARCHAR(255),
+        Wins VARCHAR(255),
+        Losses VARCHAR(255),
+        Place VARCHAR(255)
+    )
+SQL
+
+<!-- create table if it's not there already -->
+db.execute(create_table_cmd)
+
+<!-- add test entrant -->
+db.execute("INSERT INTO tourney (name) VALUES ('Bob')")
+
