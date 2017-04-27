@@ -123,9 +123,33 @@ winner = gets.chomp
 puts "Please input the loser's name"
 loser = gets.chomp
 
+
 # updates database for win/loss
 update_win(db, winner, loser)
 
 
 # retrievie data
 puts db.execute("SELECT * FROM tourney")
+
+
+
+def invalid_check(name)
+    if name.empty? or name.nil?
+        puts "No input."
+    else
+        break
+    end
+end
+
+loop do 
+    puts "Please input the winner's name"
+    winner = gets.chomp
+
+    invalid_check(winner)
+
+
+    puts "Please input the loser's name"
+    loser = gets.chomp
+
+    invalid_check(loser)
+end
