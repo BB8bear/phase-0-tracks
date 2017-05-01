@@ -126,11 +126,17 @@ def fights_left(db, id)
     db.execute(cmd)[0]
 end
 
-p fights_left(db, "1")[0]
+# p fights_left(db, "1")[0]
 
+# find person with the most Wins
+def find_winner(db)
+    cmd = <<-SQL
+    SELECT "name", MAX("Wins") from tourney
+    SQL
 
-
-
+    wins = db.execute(cmd)
+    return wins[0]
+end
 
 # tournament setup - name input
 puts "Welcome to Round Robin Tracker App v1.0"
@@ -149,8 +155,6 @@ while count < 10
         count += 1
     end
 end
-
- 
 
 
 continue = "yes"
@@ -173,15 +177,22 @@ until continue == "no"
     end
 
     # ask if user wants to enter another fight result
-    puts "Would you like to enter another results set?"
+    puts "Is the tournament still in progress?"
     continue = gets.chomp
     puts
 end
+
+puts "#{find_winner(db)[0]} is the winner with #{find_winner(db)[1]} wins."
+puts
 
 # retrievie data
 db.execute("SELECT * FROM tourney") do |row|
     p row
 end
+
+
+
+
 
 
 
