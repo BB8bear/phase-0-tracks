@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Round Robin Tournament Results Tracker v2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Round Robin Tournament Results Tracker</h1>
+    <p>Welcome to the Round Robin Tournament Results Tracker application!</p>
+    <p>Click <a href="participants/new">here</a> to add a participant to the tournament.</p>
+    <p>Click <a href="participants/match">here</a> to add a new pair score.</p>
+    <ul>
+        <% @participants.each do |participant| %>
+            <li><%= participant['name'] %></li>
+        <% end %>
+    </ul>
+</body>
+</html>
